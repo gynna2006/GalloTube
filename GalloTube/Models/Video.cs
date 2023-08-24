@@ -22,7 +22,7 @@ namespace GalloTube.Models;
     public string Description { get; set; }
 
     [Display(Name = "UploadDate")]
-    [Required(ErrorMessage = "A Classificação Etária é obrigatória")]
+    [Required(ErrorMessage = "A Data de Upload é obrigatória")]
     public DateTime UploadDate { get; set; }
 
     [Display(Name = "Duração")]

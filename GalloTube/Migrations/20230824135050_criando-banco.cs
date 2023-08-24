@@ -99,6 +99,7 @@ namespace GalloTube.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "varchar(8000)", maxLength: 8000, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    UploadDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Duration = table.Column<short>(type: "smallint", nullable: false),
                     Thumbnail = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -268,20 +269,20 @@ namespace GalloTube.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "26b4b738-c675-4cc0-aa2f-9f4c4bf173fa", "3354aa2c-49c8-4c14-8ad2-2073b3f88613", "Usuário", " USUÁRIO" },
-                    { "33e4f529-8bdd-46fc-b7e7-26706d3e83aa", "e2e71a2c-c4ea-4c5f-9132-009da259f841", "Administrador", "ADMINISTRADOR" },
-                    { "48fd0cb9-b3da-4c18-b236-ddbda12a576c", "89e2c938-0b5b-423c-a12d-705fdf6ac693", "Moderador", "MODERADOR" }
+                    { "71141664-9a0a-4e0d-a7c1-2424e79ed410", "57c225cf-a231-4599-ac03-118d0f524ecb", "Administrador", "ADMINISTRADOR" },
+                    { "97bed795-29a1-41c6-9b78-797928970197", "01bef174-3b01-438b-98cd-95baf675e15d", "Moderador", "MODERADOR" },
+                    { "c0138125-2e57-4983-96d0-2441386fa33c", "8dcdf17b-7a58-46e4-877f-1fa224bd91bc", "Usuário", " USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1481c395-b29e-4c50-80cc-244b3cfe97f1", 0, "e987c3ce-02a1-459e-b1a4-b2cad74d63ef", new DateTime(2005, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), "AppUser", "admin@gmail.com", true, false, null, "Seu Nome Completo", "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEOS1l34Feqa5gHYBKtPMP0piHAjko+bI5Nygec13S6+/jvGb8rsXpuCSVLvfAuRc2w==", "14912345678", true, "/img/users/avatar.png", "4da17111-70e7-4cb5-b64a-243caf09f2e5", false, "Admin" });
+                values: new object[] { "e78da9f9-7065-4d9d-aef1-edc22267470c", 0, "a684a9ee-97d5-465f-9dc3-24904b810fc7", new DateTime(2005, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), "AppUser", "admin@gmail.com", true, false, null, "Seu Nome Completo", "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEO3cfNYKQLc8Mx4EVWy0Ts9S8wl2h75WFcouA9UEZenIC3cjS37ieP6/ZIW9Jqbu6g==", "14912345678", true, "/img/users/avatar.png", "6ccae0ba-1515-4173-bbe7-be111179a079", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "UserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "33e4f529-8bdd-46fc-b7e7-26706d3e83aa", "1481c395-b29e-4c50-80cc-244b3cfe97f1" });
+                values: new object[] { "71141664-9a0a-4e0d-a7c1-2424e79ed410", "e78da9f9-7065-4d9d-aef1-edc22267470c" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_RoleClaims_RoleId",
